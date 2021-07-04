@@ -1,0 +1,25 @@
+extends layout
+block content 
+  #splitdiv.row
+    .column
+      h2 Zawash
+      p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          | Nam quos consequatur fugit expedita, dolo
+          | re voluptatum minima a
+          | minus dolores corrupti repudiandae fuga deleniti at
+          | quis illo, earum id, alias voluptate.
+    // This is the div with the form
+    .column
+      #h2_login Sign Up
+      form
+        .email
+          input#email_login.textarea_login(type='text' placeholder='Email')
+        #password
+          input#pass_login.textarea_login(type='text' placeholder='Password')
+        div
+          label.checkbox-inline
+          input(type='checkbox')
+          |     Remember me
+          a(href='') Forgot password
+        button#button_login LOGIN
