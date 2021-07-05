@@ -27,16 +27,16 @@ app.get('/login', function(req, res, next) {
 app.get('/', function(req, res, next) {
   res.render('layout1', { error: false });
 });
-
+//This is used to show the retrieve information from the home page
 app.post("/home",(req,res)=>{
     console.log(req.body)
     res.send("The data has been submitted")
-})
-//The code below is use to handle non existing routes.
+});
 
+//The code below is use to handle non existing routes.
 app.get('*', (req, res)=> {
     res.status(404).send('This is an invalid URL, please try another')
-})
+});
 
 //This is the port we are listening on
 app.listen(2000,function(){

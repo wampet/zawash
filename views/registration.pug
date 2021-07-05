@@ -7,27 +7,27 @@ block content
       // This is the div that will contain the actual input fields
       #formcontent(name='formcontent')
         #namepart
-          input.textarea(type='text' placeholder='First Name')
-          input.textarea(type='text' placeholder='First Name')
+          input.textarea(type='text' placeholder='First Name' name='firstName')
+          input.textarea(type='text' placeholder='Last Name' name='lastName')
         // This next div is for the email part and the address inputs
         .email
-          input#email.textarea(type='text' placeholder='Email')
-          input#address.textarea(type='text' placeholder='Address')
+          input#email.textarea(type='text' placeholder='Email' name='email')
+          input#address.textarea(type='text' placeholder='Address' name='Address')
         // This next div is for the dob and the gender
         #dobgender
           div
-            input.textarea(type='date' placeholder='Date of birth')
+            input.textarea(type='date' placeholder='Date of birth' name='BirthDay')
           // This is a drop down menu for the gender
           div
             select#gender.textarea(name='gender')
-              option.textarea1(label='Female' value='Female') Female
-              option.textarea1(label='Male' value='Male') Male
+              option.textarea1(label='Female' value='Female' name='gender') Female
+              option.textarea1(label='Male' value='Male' name='gender') Male
         // This is fo the contact and id/NIN
         #contactname
-          input#contact.textarea(type='text' placeholder='contact')
-          input#nin.textarea(type='text' placeholder='ID/NIN Number')
+          input#contact.textarea(type='text' placeholder='contact' name='contact' )
+          input#nin.textarea(type='text' placeholder='ID/NIN Number' name='id or nin')
         // The user has to input a password and then confirm it
         #password
-          input#pass1.textarea(type='text' placeholder='Password')
-          input#pass1test.textarea(type='text' placeholder='Confirm Password')
+          input#pass1.textarea(type='text' placeholder='Password' name='Password')
+          input#pass1test.textarea(type='text' placeholder='Confirm Password' name='Password_confirm' )
         button#butkati Register Now
