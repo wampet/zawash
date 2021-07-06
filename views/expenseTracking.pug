@@ -1,0 +1,24 @@
+extends layout  
+block content
+  #cont_evertything
+    h1#titleWash  Zawash Cost Monitor
+    .containerTrack
+      h4#head_balance Your balance
+      h1#balance UGX.
+      .inc-exp-container
+        div
+          h4  Total Income
+          p#money-plus.money.plus +UGX0.00
+        div
+          h4  Total Expense
+          p#money-minus.money.minus -UGX0.00
+      h3#history_track History
+      ul#list.listExpense
+      h3 Add New Transation
+      form#form(action='')
+        .form-control
+          input#text(type='text' placeholder='Please enter the name of your expenses...')
+        .form-control
+          label#amountLabel(for='amount')
+          input#amount(type='number' placeholder='Please enter the amount you want to add...')
+        button.btn Register Transaction

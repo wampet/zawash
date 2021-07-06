@@ -1,0 +1,24 @@
+extends layout  
+block content
+    .big_track
+        h2#form_head Register Below
+        form#form_washreg(action='')
+            .first_track
+                input#plate_track.textarea_track(type='text' placeholder='Number Plate')
+                input#color_track.textarea_track(type='text' placeholder='Color')
+            #date_time
+                input#color_track.textarea_track(type='time' placeholder='Time of Arrival')
+                input#date.textarea_track(type='date' placeholder='date')
+            div
+                input#washer_track.textarea_track(type='text' placeholder='Washer')
+            #make_package
+                div
+                    input#make_track.textarea_track(type='text' placeholder='Make')
+                div
+                select#package.textarea(name='Package')
+                    option.textarea_track(label='small' value='Small') Small
+                    option.textarea_track(label='Medium' value='Medium') Medium
+                    option.textarea_track(label='Full Wash' value='Full Wash') Full Wash
+                    option.textarea_track(label='Boda-boda' value='Boda-boda') Boda-boda
+                    option.textarea_track(label='Engine' value='Engine') Engine
+            button#button_track REGISTER

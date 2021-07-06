@@ -1,32 +1,30 @@
-//INSTANTIATIONS
+//DEPENDENCIES
 const express = require("express");
+const homeRoutes = require("./routes/homeRoutes");
+const registationRoutes = require("./routes/registrationRoutes");
+const washPackagesRoutes = require("./routes/washPackagesRoutes");
+const carTrackingRoutes = require("./routes/carTrackingRoutes");
+const expenseTrackingRoutes = require("./routes/expenseTrackingRoutes");
+//INSTANTIATIONS
 const app = express();
 
-//MIDDLEWARE
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-//This is a custom middleware that tells us when a request is made
-app.use((req, res, next) => {
-  console.log("A new request received at " + Date.now());
-  next();
-});
-//CONFIGURATIONS
+//CONFIGURATIONS OR SETTINGS
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+//MIDDLEWARE
+app.use(express.urlencoded({ extended: true }));
+
+// css access
+app.use(express.static('public'));
+
 //ROUTES
-//This route is for the homepage
-//this one is used for rendering/displaying the registration page
-app.get('/home', function(req, res, next) {
-    res.render('registration', { error: false });
-  });
-  //this one is used for rendering/displaying the login page
-app.get('/login', function(req, res, next) {
-  res.render('login', { error: false });
-});
-app.get('/', function(req, res, next) {
-  res.render('layout1', { error: false });
-});
+//this one is used for rendering/displaying the login page
+app.use('/home', homeRoutes);
+app.use('/cartracking', carTrackingRoutes);
+app.use('/register', registationRoutes);
+app.use('/packages', washPackagesRoutes);
+app.use('/expenseTracking', expenseTrackingRoutes);
 //This is used to show the retrieve information from the home page
 app.post("/home",(req,res)=>{
     console.log(req.body)
@@ -39,5 +37,5 @@ app.get('*', (req, res)=> {
 });
 
 //This is the port we are listening on
-app.listen(2000,function(){
+app.listen(2000,()=>{
 console.log("I am listening in on port 2000")});

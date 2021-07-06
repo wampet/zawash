@@ -1,0 +1,23 @@
+extends layout  
+block content
+        .bg-img
+            .zawashHome
+                #top_zabu  Zaabu Washing Bay (ZaWash)
+                #topWordz
+                | We are found along Mawanda Road, Kampala.
+                | We employs youth in the areas of Kalerwe, Katanga among others
+            | &gt;
+            .content_internal
+                header Login Form
+                form(action='#')
+                .field
+                    span.fa.fa-user
+                    input(type='text' required='' placeholder='Username')
+                .field.space
+                    span.fa.fa-lock
+                    input.pass-key(type='password' required='' placeholder='Password')
+                    span.show SHOW
+                .pass
+                    a(href='#') Forgot Password?
+                div
+                    button.submit_button SUBMIT
