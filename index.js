@@ -18,18 +18,15 @@ app.use(express.urlencoded({ extended: true }));
 // css access
 app.use(express.static('public'));
 
+
 //ROUTES
 //this one is used for rendering/displaying the login page
-app.use('/home', homeRoutes);
+app.use('/', homeRoutes);
 app.use('/cartracking', carTrackingRoutes);
 app.use('/register', registationRoutes);
 app.use('/packages', washPackagesRoutes);
 app.use('/expenseTracking', expenseTrackingRoutes);
-//This is used to show the retrieve information from the home page
-app.post("/home",(req,res)=>{
-    console.log(req.body)
-    res.send("The data has been submitted")
-});
+
 
 //The code below is use to handle non existing routes.
 app.get('*', (req, res)=> {

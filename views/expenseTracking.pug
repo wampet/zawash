@@ -15,10 +15,10 @@ block content
       h3#history_track History
       ul#list.listExpense
       h3 Add New Transation
-      form#form(action='')
+      form#form(action='/' method='POST')
         .form-control
-          input#text(type='text' placeholder='Please enter the name of your expenses...')
+          input#text(type='text' placeholder='Please enter the name of your expenses...' name='name of expense')
         .form-control
           label#amountLabel(for='amount')
-          input#amount(type='number' placeholder='Please enter the amount you want to add...')
+          input#amount(type='number' placeholder='Please enter the amount you want to add...' name='Expense amount')
         button.btn Register Transaction

@@ -2,27 +2,27 @@ doctype html
 html(lang='en')
 head
   link(rel="stylesheet",href="/style.css",type= "text/css")
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   title zawash car manager
   
 body
   header
-    img#imagenav(src='images/zawash.svg' alt='Image loading')
-    nav#top
-      ul
+    nav.topnav
+      ul.menu-bar
         li
-          a(href='') Services
+          a.toplink(href='/') Home
         li
-          a(href='') About
+          a.toplink(href='/packages') Packages
         li
-          a(href='') Services
-    a(href='')
-      button#top_button Contact
+          a.toplink(href='/register') Register
+        li
+          a.toplink(href='/expenseTracking') Expenses
+        li
+          a.toplink(href='/cartracking') Track
   block content
     br
     br
     footer
-    p Copyright &copy; Wamanga Peter 2021
+    p.bottomlink Copyright &copy; Wamanga Peter 2021
 
     
 

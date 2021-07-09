@@ -1,10 +1,10 @@
 extends layout  
 block content  
-  form(action='/home' method='POST')
     #container(name='divcont')
       h2 Sign Up
       h5 Please fill in this form to create an account
       // This is the div that will contain the actual input fields
+      form(action='/register' method='POST')
       #formcontent(name='formcontent')
         #namepart
           input.textarea(type='text' placeholder='First Name' name='firstName')
@@ -27,7 +27,4 @@ block content
           input#contact.textarea(type='text' placeholder='contact' name='contact' )
           input#nin.textarea(type='text' placeholder='ID/NIN Number' name='id or nin')
         // The user has to input a password and then confirm it
-        #password
-          input#pass1.textarea(type='text' placeholder='Password' name='Password')
-          input#pass1test.textarea(type='text' placeholder='Confirm Password' name='Password_confirm' )
-        button#butkati Register Now
+        button#butkati Register

@@ -2,23 +2,23 @@ extends layout
 block content
     .big_track
         h2#form_head Register Below
-        form#form_washreg(action='')
+        form#form_washreg(action='/cartracking' method='POST')
             .first_track
-                input#plate_track.textarea_track(type='text' placeholder='Number Plate')
-                input#color_track.textarea_track(type='text' placeholder='Color')
+                input#plate_track.textarea_track(type='text' placeholder='Number Plate' name='Number plate')
+                input#color_track.textarea_track(type='text' placeholder='Color' name='color')
             #date_time
-                input#color_track.textarea_track(type='time' placeholder='Time of Arrival')
-                input#date.textarea_track(type='date' placeholder='date')
+                input#color_track.textarea_track(type='time' placeholder='Time of Arrival' name='Time of Arrival')
+                input#date.textarea_track(type='date' placeholder='date' name='Date')
             div
-                input#washer_track.textarea_track(type='text' placeholder='Washer')
+                input#washer_track.textarea_track(type='text' placeholder='Washer' name='Washer')
             #make_package
                 div
-                    input#make_track.textarea_track(type='text' placeholder='Make')
+                    input#make_track.textarea_track(type='text' placeholder='Make' name='Make of Car') 
                 div
                 select#package.textarea(name='Package')
-                    option.textarea_track(label='small' value='Small') Small
-                    option.textarea_track(label='Medium' value='Medium') Medium
-                    option.textarea_track(label='Full Wash' value='Full Wash') Full Wash
-                    option.textarea_track(label='Boda-boda' value='Boda-boda') Boda-boda
-                    option.textarea_track(label='Engine' value='Engine') Engine
+                    option.textarea_track(label='small' value='Small' name='package') Small
+                    option.textarea_track(label='Medium' value='Medium' name='package') Medium
+                    option.textarea_track(label='Full Wash' value='Full Wash' name='package') Full Wash
+                    option.textarea_track(label='Boda-boda' value='Boda-boda' name='package') Boda-boda
+                    option.textarea_track(label='Engine' value='Engine' name='package') Engine
             button#button_track REGISTER
