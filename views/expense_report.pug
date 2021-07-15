@@ -1,0 +1,30 @@
+extends layoutGen
+block content
+    form.search(action='/report/expenses-report')
+            div.form-row
+                div.col-md-8
+                    input.form-control(type="date" name="searchdate" value=defaultDate)
+                div.col-md-4
+                    input.btn.btn-primary.btn-block(type="submit")
+    br
+    table.table.table-bordered 
+        thead
+            tr
+                th Date of Entry
+                th Item
+                th Amount
+        tbody
+        if expenses.length
+            each expense in expenses
+                tr
+                    td #{moment(expense.dateIn).format('DD-MM-YYYY')}
+                    td #{expense.item}
+                    td #{expense.amount}
+            tr
+                th(colspan=2) Total Expenses
+                td #{new Intl.NumberFormat().format(total.totalExpense)}
+    
+    
+
+        
+                

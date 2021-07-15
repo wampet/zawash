@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
 head
+  <script src="/validate.js"></script>
   link(rel="stylesheet",href="/style.css",type= "text/css")
   title zawash car manager
   
@@ -13,17 +14,27 @@ body
         li
           a.toplink(href='/packages') Packages
         li
-          a.toplink(href='/register') Register
+          a.toplink(href='/washerregistration') Register
         li
-          a.toplink(href='/expenseTracking') Expenses
+          a.toplink(href='/expensetracking') Expenses
         li
-          a.toplink(href='/cartracking') Track
+          a.toplink(href='/washerreg') Track
+    br
+    if alert == "success"
+      div.alert.alert-sucesss Washer added successfuly
+    if alert=="error"
+      div.alert.alert-dager An arror has occured, failed to add washer
   block content
     br
     br
     footer
-    p.bottomlink Copyright &copy; Wamanga Peter 2021
+      .footerthing
+        p
+          a(href='#') Registrations |
+        p
+          a(href='#') Reports
+      .copyright
+      p &copy;2021 Wamanaga Peter
 
-    
 
 

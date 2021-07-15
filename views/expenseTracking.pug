@@ -1,24 +1,77 @@
-extends layout  
+extends layoutGen  
 block content
-  #cont_evertything
-    h1#titleWash  Zawash Cost Monitor
-    .containerTrack
-      h4#head_balance Your balance
-      h1#balance UGX.
-      .inc-exp-container
-        div
-          h4  Total Income
-          p#money-plus.money.plus +UGX0.00
-        div
-          h4  Total Expense
-          p#money-minus.money.minus -UGX0.00
-      h3#history_track History
-      ul#list.listExpense
-      h3 Add New Transation
-      form#form(action='/' method='POST')
-        .form-control
-          input#text(type='text' placeholder='Please enter the name of your expenses...' name='name of expense')
-        .form-control
-          label#amountLabel(for='amount')
-          input#amount(type='number' placeholder='Please enter the amount you want to add...' name='Expense amount')
-        button.btn Register Transaction
+  #main.container
+    .row
+      form#form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/expensetracking' method='POST')
+        h3#mega Register Expenses
+        h5#mini Fill the form below to register new Expeses
+        div.form-row
+            div.col.form-group
+                label Date of Entry
+                input.form-control(type="date" name="doe")
+        div.form-row
+            div.col.form-group
+                label Item type
+                select.form-control(name="item")
+                    option(value="polish")  Polish
+                    option(value="detergent") Powdered detergents
+                    option(value="electricity units") Electricity units
+            div.col.form-group
+                label Amount
+                input.form-control(type="number" name="amount")
+        div.form-row
+            div.col.form-group
+                button.btn.btn-primary.btn-block Add expense  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  //- #cont_evertything
+  //-   h1#titleWash  Zawash Cost Monitor
+  //-   .containerTrack
+  //-     h4#head_balance Your balance
+  //-     h1#balance UGX.
+  //-     .inc-exp-container
+  //-       div
+  //-         h4  Total Income
+  //-         p#money-plus.money.plus +UGX0.00
+  //-       div
+  //-         h4  Total Expense
+  //-         p#money-minus.money.minus -UGX0.00
+  //-     h3#history_track History
+  //-     ul#list.listExpense
+  //-     h3 Add New Transation
+  //-     form#form(action='/expensetracking' method='POST')
+  //-       .form-control
+  //-         input#text(type='text' placeholder='Please enter the name of your expenses...' name='nameOfExpense')
+  //-       .form-control
+  //-         label#amountLabel(for='amount')
+  //-         input#amount(type='number' placeholder='Please enter the amount you want to add...' name='expenseAmount')
+  //-       button.btn Register Transaction
