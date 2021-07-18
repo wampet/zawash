@@ -1,29 +1,15 @@
 doctype html
 html(lang='en')
 head
-  <script src="/validate.js"></script>
   link(rel="stylesheet",href="/style.css",type= "text/css")
   title zawash car manager
   
 body
-  header
-    nav.topnav
-      ul.menu-bar
-        li
-          a.toplink(href='/') Home
-        li
-          a.toplink(href='/packages') Packages
-        li
-          a.toplink(href='/washerregistration') Register
-        li
-          a.toplink(href='/expensetracking') Expenses
-        li
-          a.toplink(href='/washerreg') Track
-    br
-    if alert == "success"
-      div.alert.alert-sucesss Washer added successfuly
-    if alert=="error"
-      div.alert.alert-dager An arror has occured, failed to add washer
+  br
+  if alert == "success"
+    div.alert.alert-sucesss Washer added successfuly
+  if alert=="error"
+    div.alert.alert-dager An arror has occured, failed to add washer
   block content
     br
     br

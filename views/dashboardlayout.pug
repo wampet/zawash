@@ -15,20 +15,13 @@ body
         li
           a(href='/packages') Packages
         li
-          a(href='/report/payout') Dashboard
+          a(href='/report/collection')  Collection Report
         li
-          label.toggle(for='drop-2') Service +
-          a(href='#') Register
-          input#drop-2(type='checkbox')
-          ul
-            li
-              a(href='/washerregistration') Register Washer
-            li
-              a(href='/vehicleregistration') Register Vehicle
-            li
-              a(href='/expensetracking') Register Expenses
+          a(href='/report/payout') Washer Payout
         li
-          a(href='#') Contact
+          a(href='/report/expenses-report')  Expense Report
+        li
+          a(href='/report/washer-details') Washer Details
         li
           label.toggle(for='drop-1') Account
           a(href='#') Account
@@ -58,3 +51,24 @@ body
       .copyright
       p.wampet &copy;2021 Wamanga Peter
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- nav
+//-     #nav-tab.nav.nav-tabs(role='tablist')
+//-         a#nav-profile-tab.nav-item.nav-link(href='/report/payout') Washer Payout
+//-         a#nav-contact-tab.nav-item.nav-link(href='/report/expenses-report')  Expense Report
+//-         a#nav-contact-tab.nav-item.nav-link.active(href='/report/collection')  Collection Report
+//-         a#nav-profile-tab.nav-item.nav-link(href='/report/washer-details') Washer Details
+//-     #nav-tabContent.tab-content

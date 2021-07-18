@@ -18,8 +18,9 @@ router.get('/payout', async (req, res) => {
         let washedVehicles = await VehicleRegister.aggregate(
             [ {$match: { dateIn: new Date(selectedDate) }},
             { $group: { _id: '$washer', count: { $sum: 1 }, totalPayout: { $sum: '$washerFee' } } },
-            { $lookup: { from: 'washers', localField: '_id', foreignField: '_id', as: "details" } }
+            { $lookup: { from: 'washerregisters', localField: '_id', foreignField: '_id', as: "details" } }
             ])
+            console.log(washedVehicles);
         // get the total payout for all the washers based on the selected date
         let totalPayoutPerDay = await VehicleRegister.aggregate([
                 { $match: { dateIn: new Date(selectedDate) } },
@@ -36,6 +37,8 @@ router.get('/payout', async (req, res) => {
     }
 })
 
+
+//Dont touch the doe in this case, its for the tracking expense pug this time
 router.get('/expenses-report', async (req, res) => {
     try {
         let selectedDate = moment().format('YYYY-MM-DD')
@@ -70,12 +73,12 @@ router.get('/collection', async (req, res) => {
 
         // query for returning all expenses on a day
 
-        let collectionDetails = await VehicleRegister.find({ doa: selectedDate })
+        let collectionDetails = await VehicleRegister.find({ dateIn: selectedDate })
 
         // query for total expense on a day
         let totalCollection = await VehicleRegister.aggregate([
-            { $match: { doa: new Date(selectedDate) } },
-            { $group: { _id: '$doa', totalCollection: { $sum: '$packagePrice' } } }
+            { $match: { dateIn: new Date(selectedDate) } },
+            { $group: { _id: '$dateIn', totalCollection: { $sum: '$packagePrice' } } }
         ])
 
         res.render("collection_report", {

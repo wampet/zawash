@@ -2,7 +2,7 @@ extends layoutGen
 block content
     #main.container
         .row
-            form#regform.col-lg-6.col-md-7.col-sm-12.form.mx-auto(name='form' action='/washerregistration' method='POST' onsubmit="return myvalidations()")
+            form#regform.col-lg-6.col-md-7.col-sm-12.form.mx-auto(name='form' action='/washerregistration' method='POST' onsubmit="return myvalidations();")
                 h3#mega Register Washer
                 h5#mini Fill the form below to register new Washer
                 .form-row
@@ -26,8 +26,8 @@ block content
                     .col-md-6.col-sm-12
                         select#gender.custom-select(name='gender')
                             option(value='') Choose Gender
-                            option(value='1') Male
-                            option(value='2') Female
+                            option(value='Male') Male
+                            option(value='Female') Female
                         small#gendererror.error
                     .col-md-6.col-sm-12
                         input#tel.form-control( name='tel' type='text' placeholder='Tel No.')
@@ -37,4 +37,4 @@ block content
                         small#nationaliderror.error
                 .form-field
                 button#submit.btn.btn-success.btn-block( type='submit') Submit
-    //- <script src="/validateWasher.js"></script>
+    <script src="/validateWasher.js"></script>

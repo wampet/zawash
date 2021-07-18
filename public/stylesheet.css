@@ -98,7 +98,7 @@ button.btn.btn-block {
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////// */
 /* this is for the header part */
-header{
+/* header{
    display: flex;
    flex-direction: row;
    justify-content:flex-end;
@@ -173,10 +173,262 @@ header{
    background: linear-gradient(to bottom, #3498DB,#3498DB);
    box-shadow: 0px 2px 10px 0px black;
    transform: scale(0.8);
- }
+ } */
 
 
+/* //////////////////////////////////////////////////////////////////////////////
+new header */
 
+
+a { color: #FFF; }
+
+
+#container {
+  margin: 0 auto;
+  max-width: 890px;
+}
+
+p { text-align: center; }
+ .toggle, [id^=drop] {
+ display: none;
+}
+
+nav {
+  margin: 0;
+  padding: 0 65px 0 0;
+  background-color: #254441;
+  margin-bottom: 5%;
+  font-size: px;
+}
+
+#logo {
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+  /* float: left; */
+  background-color: #254441;
+}
+
+nav a {
+  display: block;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 15px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+nav ul li ul li:hover { background: #000000; }
+
+nav a:hover { background-color: #000000; }
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+nav ul li:hover > ul { display: inherit; }
+
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+li > a:after { content: ' +'; }
+
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+#logo {
+  display: block;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  float: none;
+}
+
+nav { margin: 0; }
+
+.toggle + a,
+ .menu { display: none; }
+
+.toggle {
+  display: block;
+  background-color: #254441;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+  border: none;
+}
+
+.toggle:hover { background-color: #000000; }
+
+[id^=drop]:checked + ul { display: block; }
+
+nav ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul .toggle,
+ nav ul ul a { padding: 0 10px; }
+
+nav ul ul ul a { padding: 0 50px; }
+
+nav a:hover,
+ nav ul ul ul a { background-color: #000000; }
+
+nav ul li ul li .toggle,
+ nav ul ul a { background-color: #212121; }
+
+nav ul ul {
+  float: none;
+  position: static;
+  color: #ffffff;
+}
+
+nav ul ul li:hover > ul,
+nav ul li:hover > ul { display: none; }
+
+nav ul ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul ul li { position: static;
+
+}
+}
+
+@media all and (max-width : 330px) {
+
+nav ul li {
+  display: block;
+  width: 94%;
+}
+
+}
+
+
+/* ***************************************************************************************************** */
+/* This is for the wash packages page */
+html{overflow-y:scroll; overflow-x:hidden;}
+/* to center everthing */
+.contains_everything{
+margin: 10px auto;
+margin-top: 3%;
+
+}
+img{
+width:auto;
+max-width:100%; 
+height:auto; 
+margin:0; padding:0; 
+border:none; 
+line-height:normal; 
+vertical-align:middle;
+}
+.imgl{margin:0 15px 10px 0; clear:left;}
+.imgr{margin:0 0 10px 15px; clear:right;}
+.imgover{display:inline-block; position:relative; max-width:100%;}
+.imgover::before, .imgover::after{
+display:block; 
+position:absolute; 
+content:""; 
+text-align:center;
+  opacity:0;
+  }
+.imgover::before{top:0; right:0; bottom:0; left:0;}
+.imgover::after{top:50%; 
+  left:50%; 
+  width:50px; 
+  height:50px;
+  line-height:50px;
+  margin:-25px 0 0 -25px;
+  font-family:"Font Awesome\ 5 Free"; 
+  font-weight:900; 
+  content:"\f067";
+    /* fa-plus */ font-size:28px;}
+.imgover:hover::before, .imgover:hover::after{opacity:1;}
+/* inside it */
+figcaption, figure, main, nav, section{display:block; margin:0 auto; }
+.one_quarter{
+display:inline-block;
+margin:0 0 0 4.21052%; 
+list-style:none;
+}
+
+.first{margin-left:0; clear:left;}
+
+.one_quarter{width:16%;}
+.sectiontitle{
+  display:block;
+  max-width:55%; 
+  margin:0 auto 100px; 
+  text-align:center;}
+.sectiontitle *{margin:0;}
+/* packages we have at sawash */
+.team li:last-child{
+  margin-bottom:0;}/* Used when elements stack in small viewports */
+.team figure{
+  display:block; 
+  text-align:center;
+}
+
+.team figure *{margin:0; padding:0;}
+.team figure figcaption{padding:20px 10px; line-height:1;}
+.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure em{display:block; font-style:normal; font-size:.8rem;}
+
+
+.btn.inverse:hover{color:#FFFFFF; background-color:#FBAB45; border-color:#FBAB45;}
+.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+
+.imgover:hover::before{background-color:rgba(251,171,69,.5);/* #FBAB45 */}
+.imgover, .imgover:hover::after{color:#FFFFFF;}
+
+
+.team figure, .latest article{box-shadow:0px 0px 15px rgba(0,0,0,.1);}
+.team figure:hover{color:#FFFFFF; background-color:#FBAB45;}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
  /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
  /* This is for the footer */

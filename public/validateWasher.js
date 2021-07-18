@@ -8,7 +8,7 @@ var ZawashId = document.getElementById('ZawashId');
 var Gender = document.getElementById('gender');
 var Tel = document.getElementById('tel');
 var NationalId = document.getElementById('nationalid');
-var Submit = document.getElementById("submit");
+// var Submit = document.getElementById("submit");
 //for the error IDs
 var FirstNameError = document.getElementById('firstNameerror');
 var LastNameError = document.getElementById('lastNameerror');

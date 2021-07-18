@@ -23,6 +23,15 @@ router.post("/", async(req, res) => {
   }
 })
 
+router.post('/delete-washer', async (req, res) => {
+  try {
+      await WasherRegister.deleteOne({ _id: req.body.id })
+      res.redirect('back')
+  } catch (err) {
+      res.status(400).send("Unable to delete item in the database");
+  }
+})
+
 
 
     module.exports = router;

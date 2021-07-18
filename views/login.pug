@@ -1,4 +1,4 @@
-extends layout  
+extends layout
 block content
     .bg-img
         .zawashHome
@@ -11,11 +11,10 @@ block content
         .contact-form
             img.avatar(alt='' src='images/zawash.png')
             h2 Account Login
-            form(action='/' method='POST')
-                input.formInput(placeholder='Enter Username' type='text' name='email')
+            form( method='POST' action='/login')
+                input.formInput(placeholder='Enter Username' type='text' name='username')
                 input.formInput(placeholder='Enter Password' type='password' name='password')
-                button.submit  SUBMIT
+                button.submit  Login
                 p.remember
                     input(type='checkbox')
                     | Remember Me
-

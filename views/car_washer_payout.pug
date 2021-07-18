@@ -1,17 +1,7 @@
-extends layoutGEn
+extends dashboardlayout
 block content
-    header.card-header
-        h4.card-title Car Washer Payout
-    br
-    nav
-    #nav-tab.nav.nav-tabs(role='tablist')
-        a#nav-profile-tab.nav-item.nav-link.active(href='/report/payout')  Washer Payout
-        a#nav-contact-tab.nav-item.nav-link(href='/report/expenses-report') Expenses Report
-        a#nav-contact-tab.nav-item.nav-link(href='/report/collection') Collections Report
-        a#nav-profile-tab.nav-item.nav-link(href='/report/washer-details')  Washer Details
-    #nav-tabContent.tab-content
         br
-        form.search(action='/report/payout')
+        form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/report/payout')
             div.form-row
                 div.col-md-8
                     input.form-control(type="date" name="searchdate" value=defaultDate)
