@@ -1,26 +1,27 @@
 extends dashboardlayout
 block content
-        br
-        form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/report/collection')
-            div.form-row
-                div.col-md-8
-                    input.form-control(type="date" name="searchdate" value=defaultDate)
-                div.col-md-4
-                    input.btn.btn-primary.btn-block(type="submit")
-        br
-        table.table.table-bordered 
-            thead
-                tr
-                    th Date of Arrival
-                    th Vehicle
-                    th Amount
-            tbody
-            if collections.length
-                each collection in collections
+        .main
+            strong Collection Report
+            form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/report/collection')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(type="date" name="searchdate" value=defaultDate)
+                    div.col-md-4
+                        input.btn.btn-primary.btn-block(type="submit")
+            br
+            table.table.table-bordered 
+                thead
                     tr
-                        td #{moment(collection.datetimeArrival).format('DD-MM-YYYY hh:mm')}
-                        td #{collection.numberplate}
-                        td #{collection.packagePrice}
-                tr
-                    th(colspan=2) Total Collections
-                    td #{new Intl.NumberFormat().format(total.totalCollection)}
+                        th Date of Arrival
+                        th Vehicle
+                        th Amount
+                tbody
+                if collections.length
+                    each collection in collections
+                        tr
+                            td #{moment(collection.datetimeArrival).format('DD-MM-YYYY hh:mm')}
+                            td #{collection.numberplate}
+                            td #{collection.packagePrice}
+                    tr
+                        th(colspan=2) Total Collections
+                        td #{new Intl.NumberFormat().format(total.totalCollection)}

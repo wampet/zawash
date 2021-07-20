@@ -1,23 +1,25 @@
 extends layoutGen  
 block content
-  #main.container
-    .row
-        form(method="POST" action='/registermanager')
-            div.form-row
-                div.col.form-group
-                    label First name 
-                    input.form-control(name="firstname" placeholder='First Name')
-                div.col.form-group
-                    label Last name
-                    input.form-control(name="lastname" placeholder='Last Name')
-                div.col.form-group
-                    label User name
-                    input.form-control(name="username" placeholder='Username')
-            div.form-row
-                div.col.form-group
-                    label Create Password
-                    input.form-control(type="password" name="password")
-            div.form-row
-                div.col.form-group
-                    button.btn.btn-primary.btn-block Add manager
+    #main.container
+        .row
+            form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(method="POST" action='/registermanager')
+                h3#mega Register Manager
+                h5#mini Fill the form below to register new manager
+                div.form-row
+                    div.col.form-group
+                        label First name 
+                        input.form-control(name="firstname" placeholder='First Name')
+                    div.col.form-group
+                        label Last name
+                        input.form-control(name="lastname" placeholder='Last Name')
+                    div.col.form-group
+                        label User name
+                        input.form-control(name="username" placeholder='Username')
+                div.form-row
+                    div.col.form-group
+                        label Create Password
+                        input.form-control(type="password" name="password")
+                div.form-row
+                    div.col.form-group
+                        button.btn.btn-warning.btn-block Add manager
                             

@@ -1,7 +1,6 @@
 doctype html
 html(lang='en')
 head
-  //- <script src="/validate.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   link(rel="stylesheet",href="/stylesheet.css",type= "text/css")
   title zawash car manager
@@ -13,33 +12,33 @@ body
       input#drop(type='checkbox')
       ul.menu
         li
-          a(href='/packages') Packages
+          a.under(href='/packages' ) PACKAGES
         li
-          a(href='/report/payout') Dashboard
+          a.under(href='/report/payout' ) DASHBOARD
         li
-          label.toggle(for='drop-2') Service +
-          a(href='#') Register
+          label.toggle(for='drop-2') REGISTER +
+          a(href='#') REGISTER
           input#drop-2(type='checkbox')
           ul
             li
-              a(href='/washerregistration') Register Washer
+              a(href='/washerregistration') REGISTER WASHER
             li
-              a(href='/vehicleregistration') Register Vehicle
+              a(href='/vehicleregistration') REGISTER VEHICLE
             li
-              a(href='/expensetracking') Register Expenses
+              a(href='/expensetracking') REGISTER EXPENSES
         li
-          a(href='#') Contact
+          a(href='#') CONTACT
         li
-          label.toggle(for='drop-1') Account
-          a(href='#') Account
+          label.toggle(for='drop-1') ACCOUNT
+          a(href='#') ACCOUNT
           input#drop-1(type='checkbox')
           ul
             li
-              a(href='/registermanager') Add Manager
+              a(href='/registermanager') ADD MANAGER
             li
-              a(href='/login') Sign In
+              a(href='/login') SIGN IN 
             li
-              a(href='/logout') Log out      
+              a(href='/logout') LOG OUT     
         br
         if alert == "success"
             div.alert.alert-success Registration successful

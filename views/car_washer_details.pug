@@ -1,27 +1,29 @@
 extends dashboardlayout
 block content
-    br
-        table.table.table-bordered 
-            thead
-                tr
-                    th Full Name 
-                    th NIN
-                    th Date of Birth
-                    th Phone number
-                    th Gender
-                    th Place of residence
-                    th
-            tbody
-                if users.length
-                    each user in users
+    .main
+        .row
+            br
+                table.table.table-bordered 
+                    thead
                         tr
-                            td #{user.firstname +' '+ user.lastname}
-                            td #{user.nationalid}
-                            td #{moment(user.dateofbirth).format('DD/MM/YYYY')}
-                            td #{user.tel}
-                            td #{user.gender}
-                            td #{user.address}
-                            td
-                                form(method="post" action='/washerregistration/delete-washer')
-                                    input(type="hidden", placeholder="", name="id", value=user._id)
-                                    button.btn.btn-primary.btn-block(type="submit") Delete
+                            th Full Name 
+                            th NIN
+                            th Date of Birth
+                            th Phone number
+                            th Gender
+                            th Place of residence
+                            th
+                    tbody
+                        if users.length
+                            each user in users
+                                tr
+                                    td #{user.firstname +' '+ user.lastname}
+                                    td #{user.nationalid}
+                                    td #{moment(user.dateofbirth).format('DD/MM/YYYY')}
+                                    td #{user.tel}
+                                    td #{user.gender}
+                                    td #{user.address}
+                                    td
+                                        form(method="post" action='/washerregistration/delete-washer')
+                                            input(type="hidden", placeholder="", name="id", value=user._id)
+                                            button.btn.btn-primary.btn-block(type="submit") Delete

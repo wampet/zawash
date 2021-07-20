@@ -1,5 +1,5 @@
 body{
-    background-color: #4d5068;
+    background-color: #85DCBA;
     font-family: 'Roboto', sans-serif;
 }
 .custom-select, .form-control {
@@ -84,6 +84,11 @@ input, optgroup, select, textarea {
 
 button.btn.btn-block {
    margin-top: 5%;
+   /* background-color:  #cc0000; */
+   border-color: none;
+   color: white; 
+
+
 }
 
 @media(max-width:500px) {
@@ -96,6 +101,33 @@ button.btn.btn-block {
        font-size: 25px;
    }
 }
+
+
+/* ////////////////////////////////////////// */
+/* submit button */
+/* .btn.btn-success.btn-block{
+  background-color: #cc0000 ;
+  border-color: none;
+}
+
+/* .btn.btn-success.btn-block:focus{
+  background-color: #cc0000 ;
+  border-color: none;
+} */ */
+
+.btn:focus {
+  outline: none;
+}
+input[type=button]:focus,input[type=submit]:focus{
+  outline:0px;
+}
+
+
+btn.btn-success.btn-block:focus {
+filter:chroma(color=#000000);
+border:none;
+}
+
 /* /////////////////////////////////////////////////////////////////////////////////////////////// */
 /* this is for the header part */
 /* header{
@@ -180,9 +212,14 @@ button.btn.btn-block {
 new header */
 
 
-a { color: #FFF; }
+a { color: #FFF; 
 
+}
 
+a:active {
+  color: blue;
+  text-decoration: none;
+}
 #container {
   margin: 0 auto;
   max-width: 890px;
@@ -196,9 +233,10 @@ p { text-align: center; }
 nav {
   margin: 0;
   padding: 0 65px 0 0;
-  background-color: #254441;
+  background-color:white;
   margin-bottom: 5%;
-  font-size: px;
+  /* font-size: px; */
+  color: darkslategrey;
 }
 
 #logo {
@@ -227,21 +265,33 @@ nav ul li {
   margin: 0px;
   display: inline-block;
   /* float: left; */
-  background-color: #254441;
+  background-color:white; 
+  
+  
+
 }
 
 nav a {
   display: block;
   padding: 0 20px;
-  color: #FFF;
-  font-size: 15px;
+  color: rgb(29, 28, 28);
+  font-size: 18px;
   line-height: 60px;
   text-decoration: none;
 }
 
-nav ul li ul li:hover { background: #000000; }
+nav ul li ul li:hover {
+  color: #cc0000;
+  text-decoration: none;
+  font-size: 30px;
+  
+  /* border-bottom: 2px solid #cc0000; */
+ }
 
-nav a:hover { background-color: #000000; }
+nav a:hover {color: #cc0000; 
+  text-decoration: none;
+  /* border-bottom: 3px solid #cc0000; */
+}
 
 nav ul ul {
   display: none;
@@ -252,10 +302,11 @@ nav ul ul {
 nav ul li:hover > ul { display: inherit; }
 
 nav ul ul li {
-  width: 170px;
+  width: 230px;
   float: none;
   display: list-item;
   position: relative;
+  z-index: 2;
 }
 
 nav ul ul ul li {
@@ -287,7 +338,7 @@ nav { margin: 0; }
 .toggle + a,
  .menu { display: none; }
 
-.toggle {
+/* .toggle {
   display: block;
   background-color: #254441;
   padding: 0 20px;
@@ -296,7 +347,7 @@ nav { margin: 0; }
   line-height: 60px;
   text-decoration: none;
   border: none;
-}
+} */
 
 .toggle:hover { background-color: #000000; }
 
@@ -349,11 +400,11 @@ nav ul li {
 
 /* ***************************************************************************************************** */
 /* This is for the wash packages page */
-html{overflow-y:scroll; overflow-x:hidden;}
+/* html{overflow-y:scroll; overflow-x:hidden;} */
 /* to center everthing */
 .contains_everything{
 margin: 10px auto;
-margin-top: 3%;
+margin-top: 1%;
 
 }
 img{
@@ -361,13 +412,18 @@ width:auto;
 max-width:100%; 
 height:auto; 
 margin:0; padding:0; 
+border-radius: 15px 0 0 0;
 border:none; 
 line-height:normal; 
 vertical-align:middle;
 }
-.imgl{margin:0 15px 10px 0; clear:left;}
-.imgr{margin:0 0 10px 15px; clear:right;}
-.imgover{display:inline-block; position:relative; max-width:100%;}
+
+.imgover{
+  display:inline-block; 
+  position:relative; 
+  max-width:100%;
+}
+
 .imgover::before, .imgover::after{
 display:block; 
 position:absolute; 
@@ -375,58 +431,88 @@ content:"";
 text-align:center;
   opacity:0;
   }
-.imgover::before{top:0; right:0; bottom:0; left:0;}
-.imgover::after{top:50%; 
-  left:50%; 
-  width:50px; 
-  height:50px;
-  line-height:50px;
-  margin:-25px 0 0 -25px;
-  font-family:"Font Awesome\ 5 Free"; 
-  font-weight:900; 
-  content:"\f067";
-    /* fa-plus */ font-size:28px;}
+
+.imgover::before{
+  top:0; right:0; 
+  bottom:0; 
+  left:0;}
+
 .imgover:hover::before, .imgover:hover::after{opacity:1;}
 /* inside it */
-figcaption, figure, main, nav, section{display:block; margin:0 auto; }
+
 .one_quarter{
-display:inline-block;
-margin:0 0 0 4.21052%; 
-list-style:none;
+  display:inline-block;
+  margin:0 0 0 3.21052%; 
+  list-style:none;
 }
 
 .first{margin-left:0; clear:left;}
 
-.one_quarter{width:16%;}
-.sectiontitle{
+.one_quarter{width:17%;}
+.sectiontitle h2 {
   display:block;
   max-width:55%; 
-  margin:0 auto 100px; 
-  text-align:center;}
-.sectiontitle *{margin:0;}
+  margin:30px auto 5px; 
+  text-align:center;
+  /* color: #ffc665; */
+  color: #231F20;
+  font-size: 40px;
+
+}
+.sectiontitle p {
+  display:block;
+  max-width:55%; 
+  margin:0 auto 40px; 
+  text-align:center;
+  color:#85DCBA;
+  font-size: 20px;
+  background-color:  #231F20;
+  padding: 0.5%;
+  border-radius: 5px;
+
+}
+
+
+/* .sectiontitle *{margin:0;} */
 /* packages we have at sawash */
 .team li:last-child{
   margin-bottom:0;}/* Used when elements stack in small viewports */
 .team figure{
-  display:block; 
-  text-align:center;
+    display:block; 
+    text-align:center;
 }
 
-.team figure *{margin:0; padding:0;}
-.team figure figcaption{padding:20px 10px; line-height:1;}
-.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
-.team figure em{display:block; font-style:normal; font-size:.8rem;}
+/* .team figure *{margin:0; padding:0;} */
+.team figure figcaption{
+    padding:10px 5px;
+    line-height:1;
+  }
+.team figure strong{
+    display:block;
+    margin-bottom:0.2%;
+    font-size:25px;
+    font-weight:400;
+    color: #231F20;
+    }
+.team figure em{
+  display:block;
+   font-style:normal;
+    font-size:18px;
+    color:#231F20;
+  
+  }
+
+  .nospace.group.team figure em:hover::after,.nospace.group.team figure strong:hover::after{
+    color: white;
+  }
 
 
-.btn.inverse:hover{color:#FFFFFF; background-color:#FBAB45; border-color:#FBAB45;}
-.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
-
-.imgover:hover::before{background-color:rgba(251,171,69,.5);/* #FBAB45 */}
-.imgover, .imgover:hover::after{color:#FFFFFF;}
+.imgover:hover::before{background-color:rgba(255,198,101,.5);}
+.imgover, .imgover:hover::after{color:white;}
 
 
-.team figure, .latest article{box-shadow:0px 0px 15px rgba(0,0,0,.1);}
-.team figure:hover{color:#FFFFFF; background-color:#FBAB45;}
+.nospace.group.team figure, .latest article{box-shadow:0px 0px 15px rgba(0,0,0,.1);}
+.nospace.group.team figure:hover{color:white; background-color:#ffc665}
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -435,15 +521,16 @@ list-style:none;
  footer{
   display: inline-flex;
   column-gap: 20px;
-  bottom: 0;
+  
   /* width: 100%; */
   /* margin-top: 0.5%; */
   /* margin: 0 auto; */
-  position: relative;
+  position: absolute;
   margin-left: 500px;
-  
+  /* margin: 0 auto;
+   */
  
-  /* text-align: center; */
+  text-align: center;
 }
 .footerthing{
   display: inline-flex;
