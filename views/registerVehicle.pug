@@ -32,7 +32,7 @@ block content
                     .col-md-6.col-sm-12
                         select#washer.custom-select(name='washer')
                             each washer in washers
-                                option(value=washer._id) #{washer.firstname +' '+ washer.lastname}
+                                option(value=washer._id) #{washer.fullname}
                         small#errorwasher.error
                 .form-field
                         input#make.form-control(name='make' type='text' placeholder='Make of Vehicle')

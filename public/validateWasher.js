@@ -1,7 +1,6 @@
 
 // Declare variables to pick inputs from form
-var firstName = document.getElementById('firstName');
-var lastName= document.getElementById('lastName');
+var fullName = document.getElementById('fullName');
 var dob = document.getElementById('dob');
 var address = document.getElementById('address');
 var zawashId = document.getElementById('zawashId');
@@ -12,8 +11,7 @@ var nationalId = document.getElementById('nationalId');
 
 
 //for the Error IDs
-var firstNameError = document.getElementById('firstNameError');
-var lastNameError = document.getElementById('lastNameError');
+var fullNameError = document.getElementById('fullNameError');
 var dobError  = document.getElementById('dobError');
 var addressError  = document.getElementById('addressError');
 var zawashIdError  = document.getElementById('zawashIdError');
@@ -23,7 +21,7 @@ var nationalIdError  = document.getElementById('nationalIdError');
 
 
 // // For the regular expressions to be used 
-var nameReg = /^[A-Z]([a-z])+$/;
+var nameReg = /^[[A-Z]([a-z])|[A-Z]([a-z])]$/;
 var zawashIdReg  = /^Zwash([0-9]{3})$/;
 var nationalIdReg  = /^[A-Z]{3}[0-9A-Z]{8}$/; 
 
@@ -33,32 +31,20 @@ var nationalIdReg  = /^[A-Z]{3}[0-9A-Z]{8}$/;
 //then we create a function that will be using the above variables to validate
 
 let validatewasher =() => {   
-    // This is for firstName validation
-    if (firstName.value.length < 8) {
-    firstNameError.innerHTML = ' Name Should be atleast 8 Characters ';
-    firstName.style.border = "1px solid red"
+    // This is for fullName validation
+    if (fullName.value.length < 8) {
+    fullNameError.innerHTML = ' Name Should be atleast 8 Characters ';
+    fullName.style.border = "1px solid red"
     return false;
-    } else if (firstName.value.length>= 8 && firstName.value.match(nameReg)) {
-        firstNameError.innerHTML = '';
-        firstName.style.border = "1px solid green"
-    } else if (!(firstName.value.length<= 8 && firstName.value.match(nameReg))) {
-        firstNameError.innerHTML = 'Name start with Capital letter ';
-        firstName.style.border = "1px solid red"
+    } else if (fullName.value.match(nameReg)) {
+        fullNameError.innerHTML = '';
+        fullName.style.border = "1px solid green"
+    } else if (!(fullName.value.length<= 8 && fullName.value.match(nameReg))) {
+        fullNameError.innerHTML = 'Name start with Capital letter ';
+        fullName.style.border = "1px solid red"
         return false;
     }                                
-    // This is for  the last name validation
-    if (lastName.value.length < 8) {
-        lastNameError.innerHTML = ' Name Should be atleast 8 Characters ';
-        lastName.style.border = "1px solid red"
-       return false;
-    } else if (lastName.value.length>= 8 && lastName.value.match(nameReg)) {
-        lastNameError.innerHTML = '';
-        lastName.style.border = "1px solid green"
-    } else if (!(lastName.value.length<= 8 && lastName.value.match(nameReg))) {
-        lastNameError.innerHTML = 'Name start with Capital letter ';
-        lastName.style.border = "1px solid red"
-        return false;
-    } 
+   
     //Date of birth validation
     if(dob.value==""  ){
         dob.style.border = "1px solid red"

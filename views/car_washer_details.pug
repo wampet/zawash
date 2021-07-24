@@ -17,7 +17,7 @@ block content
                         if users.length
                             each user in users
                                 tr
-                                    td #{user.firstname +' '+ user.lastname}
+                                    td #{user.fullname}
                                     td #{user.nationalid}
                                     td #{moment(user.dateofbirth).format('DD/MM/YYYY')}
                                     td #{user.tel}

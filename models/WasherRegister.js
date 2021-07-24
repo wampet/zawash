@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
 const washerRegSchema = new mongoose.Schema({
-    firstname: {
+    fullname: {
       type: String,
       trim: true,
     },
-    lastname: {
-        type: String,
-        trim: true,
-      },
     dateofbirth: {
       type: Date,
       
