@@ -89,7 +89,7 @@ let validatewasher =() => {
             zawashIdError.innerHTML = '';
             zawashId.style.border = "1px solid green"
         } else if (!(zawashId.value.match(zawashIdReg))) {
-            zawashIdError.innerHTML = 'Zwash ID starts with Zwash and 3 numbers follow  ';
+            zawashIdError.innerHTML = 'Starts with Zwash followed by 3 numbers';
             zawashId.style.border = "1px solid red"
             return false;
         } 

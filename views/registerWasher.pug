@@ -14,7 +14,7 @@ block content
                         small#lastNameError.error
                 .form-row
                     .col-md-6.col-sm-12
-                        input#dob.form-control(name='dateofbirth' type='text' placeholder='Date of Birth' onfocus="(this.type='date')")
+                        input#dob.form-control(name='dateofbirth' max="2003-12-01" type='text' placeholder='Date of Birth' onfocus="(this.type='date')")
                         small#dobError.error
                     .col-md-6.col-sm-12
                         input#address.form-control( name='address' type='text' placeholder='Address')

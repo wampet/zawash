@@ -4,18 +4,24 @@ const ExpenseTrack = require('../models/ExpenseTrack')
 
 
 
-
 router.get('/', (req, res) => {
-    res.render('expenseTracking', { error: false });
-  });
+  res.render('expenseTracking', { title: "Register Expense" , alert: req.query.alert })
+})
 
-  router.post("/", (req,res)=>{
-    console.log(req.body)
-    const expensetracking = new ExpenseTrack(req.body);
-    expensetracking.save()
-        .then(() => { res.send('Thank you for your registering the Expenses!'); })
-        .catch((err) =>{ console.log(err); 
-                          res.send('Sorry! Something went wrong.');});
-  })
+router.post("/", async(req, res) => {
+  try {
+      const expensetracking = new ExpenseTrack(req.body);
+      await expensetracking.save();
+      
+      res.redirect('/expensetracking?alert=success');
+      console.log(req.body);
+  }
+  catch (err) {
+      res.status(400).render('expenseTracking', { title: "Register Expense", alert: 'error' })
+      console.log(err);
+  }
+})
+
 
   module.exports = router;
+
