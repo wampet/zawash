@@ -1,21 +1,46 @@
-extends layout  
+extends layoutGen  
 block content
-    .bg-img
-        .zawashHome
-            #top_zabu  ZaWash
-            #topWordz
-                | Zaabu Washing Bay is found along
-                | Mawanda Road, Kampala.
-                | We employ youth in the areas of
-                | Kalerwe, Katanga among others
-        .contact-form
-            img.avatar(alt='' src='images/zawash.png')
-            h2 Account Login
-            form(action='/' method='POST')
-                input.formInput(placeholder='Enter Username' type='text' name='email')
-                input.formInput(placeholder='Enter Password' type='password' name='password')
-                button.submit  SUBMIT
-                p.remember
-                    input(type='checkbox')
-                    | Remember Me
-
+  section.contains_everything
+    .sectiontitle
+      h2.heading Wash Packages
+      p.subhead
+        | We provide on-demand car washes,
+        | gentle car washes, gentle care car wash, the shine experience,
+        | car wash and detailing, exclusive hand wash, vehicle baths, sparkle, sparkle,
+        | splash and rinse for the following:
+    ul.nospace.group.team
+      li.one_quarter.first
+        figure
+          a.imgover(href='#')
+            img(alt='' src='images/small_car.jpg')
+          figcaption
+            strong SMALL CAR
+            em UGX.10,000
+      li.one_quarter
+        figure
+          a.imgover(href='#')
+            img(src='images/medium.jpg' alt='')
+          figcaption
+            strong MEDIUM SIZE
+            em UGX.15,000
+      li.one_quarter
+        figure
+          a.imgover(href='#')
+            img(alt='' src='images/full_wash.jpg')
+          figcaption
+            strong FULL WASH
+            em UGX.20,000
+      li.one_quarter
+        figure
+          a.imgover(href='#')
+            img(alt=' ' src='images/bike.jpg')
+          figcaption
+            strong BODA BODA
+            em UGX.5,000
+      li.one_quarter
+        figure
+          a.imgover(href='#')
+            img(src='images/engine2.jpg' alt='')
+          figcaption
+            strong ENGINE CLEAN
+            em UGX.10,000

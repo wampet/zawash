@@ -7,19 +7,15 @@ block content
                 h5#mini Fill the form below to register new manager
                 div.form-row
                     div.col.form-group
-                        label First name 
-                        input.form-control(name="firstname" placeholder='First Name')
+                        input.form-control(name="firstname" placeholder='First Name' required='')
                     div.col.form-group
-                        label Last name
-                        input.form-control(name="lastname" placeholder='Last Name')
+                        input.form-control(name="lastname" placeholder='Last Name' required='')
                     div.col.form-group
-                        label User name
-                        input.form-control(name="username" placeholder='Username')
+                        input.form-control(name="username" placeholder='Username' required='')
                 div.form-row
                     div.col.form-group
-                        label Create Password
-                        input.form-control(type="password" name="password")
+                        input.form-control(type="password" placeholder='Password' name="password" required='')
                 div.form-row
                     div.col.form-group
-                        button.btn.btn-warning.btn-block Add manager
+                        button#submit.btn.btn-warning.btn-block Add manager
                             

@@ -1,28 +1,28 @@
 doctype html
 html(lang='en')
 head
-  //- <script src="/validate.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  link(rel="stylesheet",href="/layout.css",type= "text/css")
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
+  link(rel="stylesheet",href="/dashboard.css",type= "text/css")
   title zawash car manager
   
 body
  .grid-container
     header.header
-      .header__search Search...
       a(href='/logout') Log out
     aside.sidenav
       ul.sidenav__list
         li.sidenav__list-item
-          a(href='/report/expenses-report')  HOME
+          a(href='/')  HOME
+        li#reportitem.sidenav__list-item REPORTS
         li.sidenav__list-item
-          a(href='/report/expenses-report')  Expense Report 
+          a.report(href='/report/expenses-report')   Expense Report 
         li.sidenav__list-item 
-          a(href='/report/collection')  Collection Report
+          a.report(href='/report/collection')    Collection Report
         li.sidenav__list-item 
-          a(href='/report/payout') Washer Payout
-        li.sidenav__list-item Account
-        li.sidenav__list-item Item Five
+          a.report(href='/report/payout')    Washer Payout
+        li.sidenav__list-item 
+          a(href='/contact') CONTACT   
+        li#reportitem.sidenav__list-item ACCOUNT
 
           br
           if alert == "success"
@@ -34,44 +34,14 @@ body
 
     br
     br
-    //- footer
-    //-   .footerthing
-    //-     p
-    //-       a(href='#') Registrations |
-    //-     p
-    //-       a(href='/report/payout') Reports
-    //-   .copyright
-    //-   p.wampet &copy;2021 Wamanga Peter
-
-
-
-
-//- nav
-//-       #logo Zawash
-//-       label.toggle(for='drop') Menu
-//-       input#drop(type='checkbox')
-//-       ul.menu
-//-         li
-//-           a(href='/packages') Packages
-//-         li
-//-           a(href='/report/collection')  Collection Report
-//-         li
-//-           a(href='/report/payout') Washer Payout
-//-         li
-//-           a(href='/report/expenses-report')  Expense Report
-//-         li
-//-           a(href='/report/washer-details') Washer Details
-//-         li
-//-           label.toggle(for='drop-1') Account
-//-           a(href='#') Account
-//-           input#drop-1(type='checkbox')
-//-           ul
-//-             li
-//-               a(href='/registermanager') Add Manager
-//-             li
-//-               a(href='/login') Sign In
-//-             li
-//-               a(href='/logout') Log out
+    footer
+      .footerthing
+        p
+          a(href='#') Registrations |
+        p
+          a(href='/report/payout') Reports
+      .copyright
+      p.wampet &copy;2021 Wamanga Peter
 
 
 
@@ -82,10 +52,6 @@ body
 
 
 
-//- nav
-//-     #nav-tab.nav.nav-tabs(role='tablist')
-//-         a#nav-profile-tab.nav-item.nav-link(href='/report/payout') Washer Payout
-//-         a#nav-contact-tab.nav-item.nav-link(href='/report/expenses-report')  Expense Report
-//-         a#nav-contact-tab.nav-item.nav-link.active(href='/report/collection')  Collection Report
-//-         a#nav-profile-tab.nav-item.nav-link(href='/report/washer-details') Washer Details
-//-     #nav-tabContent.tab-content
+
+
+

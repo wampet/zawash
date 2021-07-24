@@ -2,39 +2,39 @@ extends layoutGen
 block content
     #main.container
         .row
-            form#regform.col-lg-6.col-md-7.col-sm-12.form.mx-auto(name='form' action='/washerregistration' method='POST' onsubmit="return myvalidations();")
+            form#regform.col-lg-6.col-md-7.col-sm-12.form.mx-auto(name='form' action='/washerregistration' method='POST' onsubmit="return validatewasher();")
                 h3#mega Register Washer
                 h5#mini Fill the form below to register new Washer
                 .form-row
                     .col-md-6.col-sm-12
                         input#firstName.form-control(name='firstname' type='text' placeholder='First Name')
-                        small#firstNameerror.error
+                        small#firstNameError.error
                     .col-md-6.col-sm-12
                         input#lastName.form-control(name='lastname' type='text' placeholder='Last Name')
-                        small#lastNameerror.error
+                        small#lastNameError.error
                 .form-row
                     .col-md-6.col-sm-12
-                        input#DateOfBirth.form-control(name='dateofbirth' type='text' placeholder='Date of Birth' onfocus="(this.type='date')")
-                        small#DateOfBirtherror.error
+                        input#dob.form-control(name='dateofbirth' type='text' placeholder='Date of Birth' onfocus="(this.type='date')")
+                        small#dobError.error
                     .col-md-6.col-sm-12
-                        input#address.form-control(name='address' type='text' placeholder='Address')
-                        small#addresserror.error
+                        input#address.form-control( name='address' type='text' placeholder='Address')
+                        small#addressError.error
                 .form-field
-                        input#ZawashId.form-control(name='zawashid' type='text' placeholder='Zawash ID')
-                        small#ZawashIderror.error
+                        input#zawashId.form-control(name='zawashid' type='text' placeholder='Zawash ID')
+                        small#zawashIdError.error
                 .form-row
                     .col-md-6.col-sm-12
                         select#gender.custom-select(name='gender')
                             option(value='') Choose Gender
                             option(value='Male') Male
                             option(value='Female') Female
-                        small#gendererror.error
+                        small#genderError.error
                     .col-md-6.col-sm-12
                         input#tel.form-control( name='tel' type='text' placeholder='Tel No.')
-                        small#telerror.error
+                        small#telError.error
                 .form-field
-                        input#nationalid.form-control( name='nationalid' type='text' placeholder='National ID/Passprt No.')
-                        small#nationaliderror.error
+                        input#nationalId.form-control( name='nationalid' type='text' placeholder='National ID/Passprt No.')
+                        small#nationalIdError.error
                 .form-field
-                button#submit.btn.btn-warning.btn-block( type='submit') Submit
-    <script src="/validateWasher.js"></script>
+                button#submit.btn.btn-warning.btn-block(type='submit' ) Submit
+    script(src='/validateWasher.js')

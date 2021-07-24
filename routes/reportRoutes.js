@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/payout', async (req, res) => {
     try {
-        // use moment to get selected date and default date
+        // We use moment to get selected date and default date. We also determine the format used
         let selectedDate = moment().format('YYYY-MM-DD')
         if (req.query.searchdate)
             selectedDate = moment(req.query.searchdate).format('YYYY-MM-DD')

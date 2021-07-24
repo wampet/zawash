@@ -1,18 +1,18 @@
 doctype html
 html(lang='en')
 head
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous')
   link(rel="stylesheet",href="/stylesheet.css",type= "text/css")
   title zawash car manager
   
 body
     nav
-      #logo Zawash
+      img.logo(alt='' src='images/logo.png')
       label.toggle(for='drop') Menu
       input#drop(type='checkbox')
       ul.menu
         li
-          a.under(href='/packages' ) PACKAGES
+          a.under(href='/' ) HOME
         li
           a.under(href='/report/payout' ) DASHBOARD
         li
@@ -27,7 +27,7 @@ body
             li
               a(href='/expensetracking') REGISTER EXPENSES
         li
-          a(href='#') CONTACT
+          a(href='/contact') CONTACT
         li
           label.toggle(for='drop-1') ACCOUNT
           a(href='#') ACCOUNT
@@ -51,7 +51,7 @@ body
     footer
       .footerthing
         p
-          a(href='#') Registrations |
+          a(href='#') Registrations | 
         p
           a(href='/report/payout') Reports
       .copyright

@@ -22,7 +22,7 @@ router.get('/', async(req, res) => {
 
 router.post("/", async(req, res) => {
   try {
-      
+      //here we just create an equivalent of time and date by combining them into one thing
       let data = req.body
       let datetimeArrival = Date.parse(data.dateIn + 'T' + data.timeIn);
       data.datetimeArrival = datetimeArrival
@@ -34,7 +34,7 @@ router.post("/", async(req, res) => {
 
       const vehicleregister  = new VehicleRegister(req.body);
       await vehicleregister.save()
-      res.redirect('/washerreg?alert=success');
+      res.redirect('/vehicleregistration?alert=success');
       console.log(req.body);
   }
   catch (err) {

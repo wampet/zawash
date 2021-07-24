@@ -22,7 +22,8 @@ router.post("/", async(req, res) => {
       console.log(err);
   }
 })
-
+//This is used when we want to delete a washer from the auto populate section
+//The washer does not leave the database and would have to be deleted from the compass manually
 router.post('/delete-washer', async (req, res) => {
   try {
       await WasherRegister.deleteOne({ _id: req.body.id })
