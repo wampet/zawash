@@ -3,19 +3,23 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 
 const managerSchema = new mongoose.Schema({
-    firstname: {
+    fullname: {
       type: String,
       trim: true,
-      required: "Please provide first name",
+      required: "Please provide full name",
     },
-    lastname: {
+    contact: {
       type: String,
-      required: "Please provide last name",
+      required: "Please provide contact",
+      trim: true,
+    },email: {
+      type: String,
+      required: "Please provide email",
       trim: true,
     },
     username: {
         type: String,
-        required: "Please provide user name",
+        required: "Please provide username",
         unique: true,
         trim: true,
       },

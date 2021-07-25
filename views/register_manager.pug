@@ -5,16 +5,18 @@ block content
             form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(method="POST" action='/registermanager')
                 h3#mega Register Manager
                 h5#mini Fill the form below to register new manager
+                div.form-field
+                        input.form-control(name="fullname" placeholder='Full Name' required='')
                 div.form-row
                     div.col.form-group
-                        input.form-control(name="firstname" placeholder='First Name' required='')
+                        input.form-control(name="contact" placeholder='Contact' required='')
                     div.col.form-group
-                        input.form-control(name="lastname" placeholder='Last Name' required='')
-                    div.col.form-group
-                        input.form-control(name="username" placeholder='Username' required='')
+                        input.form-control(name="email" placeholder='Email' required='')
                 div.form-row
                     div.col.form-group
                         input.form-control(type="password" placeholder='Password' name="password" required='')
+                    div.col.form-group
+                        input.form-control(name="username" placeholder='Username' required='')
                 div.form-row
                     div.col.form-group
                         button#submit.btn.btn-warning.btn-block Add manager
