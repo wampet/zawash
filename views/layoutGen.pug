@@ -21,11 +21,11 @@ body
           input#drop-2(type='checkbox')
           ul
             li
-              a(href='/washerregistration') REGISTER WASHER
+              a(href='/expensetracking') REGISTER EXPENSES
             li
               a(href='/vehicleregistration') REGISTER VEHICLE
             li
-              a(href='/expensetracking') REGISTER EXPENSES
+              a(href='/washerregistration') REGISTER WASHER
         li
           a(href='/contact') CONTACT
         li
@@ -38,7 +38,7 @@ body
             li
               a(href='/login') SIGN IN 
             li
-              a(href='/logout') LOG OUT     
+              a(href='/logout') SIGN OUT     
         br
         if alert == "success"
             div.alert.alert-success Registration successful
@@ -48,12 +48,7 @@ body
     block content
     br
     br
-    footer
+    footer.bg-light.text-center.text-lg-start
       .footerthing
-        p
-          a(href='#') Registrations | 
-        p
-          a(href='/report/payout') Reports
-      .copyright
       p.wampet &copy;2021 Wamanga Peter
 

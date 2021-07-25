@@ -556,23 +556,25 @@ img {
 /* This is for the footer */
 
 footer {
-    display: inline-flex;
-    column-gap: 20px;
     bottom: 0; 
-    margin-top: 2%;
     position: fixed;
     width: 100%;
-    left:0;
-    margin-left: 500px;
-    /* margin: 0 auto; */
     text-align: center;
 }
 
 .footerthing {
-    display: inline-flex;
-    
+    /* display: inline-flex; */
+    margin-left: 50%;
+    margin-right: 50%; 
+    background-color: none;
+ 
 }
 
 .wampet {
-    color: #f0ad4e;
+    color: #231F20;
+    background-color: none;
+    padding:3px 0px 0px 0px ;
+}
+.bg-light.text-center.text-lg-start{
+    background-color: none;
 }
