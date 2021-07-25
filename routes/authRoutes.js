@@ -21,4 +21,5 @@ router.get('/logout', (req, res) => {
   })
 })
 
+//Finally, we export our router variable so that it can be imported and used in other files.
 module.exports = router; 

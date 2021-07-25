@@ -1,8 +1,11 @@
+//Here, we’re importing Express into our routes file and then grabbing the router from it.
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const Manager = require('../models/Manager');
 
+
+//We then use the router to respond to any requests to the endpoint
 router.get('/', (req, res) => {
     res.render('register_manager', {
         title: "Register Manager",

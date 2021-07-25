@@ -13,15 +13,22 @@ block content
                 thead
                     tr
                         th Date and Time of Arrival
-                        th Vehicle
-                        th Amount
+                        th Color
+                        th Make
+                        th Number Plate
+                        th Package
+                        th Amount(Ugx)
                 tbody
                 if collections.length
                     each collection in collections
                         tr
                             td #{moment(collection.datetimeArrival).format('DD-MM-YYYY hh:mm')}
+                            td #{collection.colorvehicle}
+                            td #{collection.make}
                             td #{collection.numberplate}
+                            td #{collection.package}
                             td #{collection.packagePrice}
+                            
                     tr
-                        th(colspan=2) Total Collections
+                        th(colspan=5) Total Collections
                         td #{new Intl.NumberFormat().format(total.totalCollection)}

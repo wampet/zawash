@@ -24,6 +24,7 @@ const vehicleSchema = new mongoose.Schema({
     washer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'WasherRegister',
+        
     },
     packagePrice: {
       type: Number,

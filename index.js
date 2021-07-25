@@ -22,7 +22,8 @@ const expressSession = require('express-session')({
 require('dotenv').config();
 
 //INSTANTIATIONS
-// Here we are basically creating objects using functions
+//We create a new Express app using the express function and assigning it to an app variable.
+//Express is a nodejs framework for writing web apps
 const app = express();
 
 //mongoose connection
@@ -74,7 +75,7 @@ passport.deserializeUser(Manager.deserializeUser());
 
 
 // ROUTES
-// these are used is used for rendering/displaying the login page
+//We tell the app that, whenever it receives a request from forward slash anything, it should use the routes file.
 app.use('/', homeRoutes);
 app.use('/contact', contactRoutes);
 app.use('/expensetracking', expenseTrackingRoutes);

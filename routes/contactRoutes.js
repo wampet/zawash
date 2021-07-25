@@ -10,5 +10,5 @@ router.post("/", (req,res)=>{
     console.log(req.body)
   
 });
-
+  //Finally, we export our router variable so that it can be imported and used in other files.
   module.exports = router;

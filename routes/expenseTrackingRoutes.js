@@ -3,7 +3,7 @@ const router = express.Router();
 const ExpenseTrack = require('../models/ExpenseTrack')
 
 
-
+//We then use the router to respond to any requests to the endpoint
 router.get('/', (req, res) => {
   res.render('expenseTracking', { title: "Register Expense" , alert: req.query.alert })
 })
@@ -22,6 +22,6 @@ router.post("/", async(req, res) => {
   }
 })
 
-
+  //Finally, we export our router variable so that it can be imported and used in other files.
   module.exports = router;
 

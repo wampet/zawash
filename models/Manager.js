@@ -32,3 +32,4 @@ const managerSchema = new mongoose.Schema({
 managerSchema.plugin(passportLocalMongoose);
   // managerSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
 module.exports = mongoose.model('Manager', managerSchema);
+//Finally, we export our mongoose model variable so that it can be imported and used in other files.

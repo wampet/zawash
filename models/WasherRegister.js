@@ -33,3 +33,4 @@ const washerRegSchema = new mongoose.Schema({
   });
 
 module.exports = mongoose.model('WasherRegister', washerRegSchema);
+//Finally, we export our mongoose model so that it can be imported and used in other files.

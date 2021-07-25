@@ -1,41 +1,42 @@
 // Declare variables to pick inputs from form
-var NumberPlate = document.getElementById("numberplate");
+var numberplate = document.getElementById("numberplate");
 var ColorVehicle = document.getElementById("colorvehicle");
-var TimeIn = document.getElementById("timeIn");
-var DateIn = document.getElementById("dateIn");
-var Package = document.getElementById("package");
-var Washer = document.getElementById("washer");
-var Make = document.getElementById("make");
-var form = document.getElementById("regform");
-var submit = document.getElementById("submit");
+var timeIn = document.getElementById("timeIn");
+var dateIn = document.getElementById("dateIn");
+var package = document.getElementById("package");
+var washer = document.getElementById("washer");
+var make = document.getElementById("make");
+
+
+
 //for the error IDs
-var NumberPlateError = document.getElementById("errorplate");
+var numberplateError = document.getElementById("errorplate");
 var ColorVehicleError = document.getElementById("errorvehicle");
-var TimeInError = document.getElementById("errortime");
-var DateInError = document.getElementById("errordate");
-var PackageError = document.getElementById("errorpackage");
-var WasherError = document.getElementById("errorwasher");
-var MakeError = document.getElementById("errormake");
+var timeInError = document.getElementById("errortime");
+var dateInError = document.getElementById("errordate");
+var packageError = document.getElementById("errorpackage");
+var washerError = document.getElementById("errorwasher");
+var makeError = document.getElementById("errormake");
 
 // validation of the numbeplate
-var NumberPlatereg = /^([A-Z]{3}.*[\s\.]*[0-9]{3}[A-Z]{1})$/;
+var numberplatereg = /^([A-Z]{3}.*[\s\.]*[0-9]{3}[A-Z]{1})$/;
 
 //function to help us validate the form
 let validatevehicle = () => {
-  if (!(NumberPlate.value.length == 8)) {
-    NumberPlateError.innerHTML = " Number Plate Should be 8 Characters ";
-    NumberPlate.style.border = "1px solid red";
+  if (!(numberplate.value.length == 8)) {
+    numberplateError.innerHTML = " Number Plate Should be 8 Characters ";
+    numberplate.style.border = "1px solid red";
     return false;
   } else if (
-    NumberPlate.value.length >= 8 &&
-    NumberPlate.value.match(NumberPlatereg)
+    numberplate.value.length >= 8 &&
+    numberplate.value.match(numberplatereg)
   ) {
-    NumberPlateError.innerHTML = "";
-    NumberPlate.style.border = "1px solid green";
-  } else if (!(NumberPlate.value.length <= 8 && NumberPlate.value.match(NumberPlatereg))
+    numberplateError.innerHTML = "";
+    numberplate.style.border = "1px solid green";
+  } else if (!(numberplate.value.length <= 8 && numberplate.value.match(numberplatereg))
   ) {
-    NumberPlateError.innerHTML = "Number Plate start with Capital letter ";
-    NumberPlate.style.border = "1px solid red";
+    numberplateError.innerHTML = "Number Plate start with Capital letter ";
+    numberplate.style.border = "1px solid red";
     return false;
   }
 
@@ -49,49 +50,49 @@ let validatevehicle = () => {
     ColorVehicleError.innerHTML = "";
   }
   //timeIn
-  if (TimeIn.value == "") {
-    TimeIn.style.border = "1px solid red";
-    TimeInError.innerHTML = "Please fill field";
+  if (timeIn.value == "") {
+    timeIn.style.border = "1px solid red";
+    timeInError.innerHTML = "Please fill field";
     return false;
   } else {
-    TimeIn.style.border = "1px solid green";
-    TimeInError.innerHTML = "";
+    timeIn.style.border = "1px solid green";
+    timeInError.innerHTML = "";
   }
   //Date In
-  if (DateIn.value == "") {
-    DateIn.style.border = "1px solid red";
-    DateInError.innerHTML = "Please fill field";
+  if (dateIn.value == "") {
+    dateIn.style.border = "1px solid red";
+    dateInError.innerHTML = "Please fill field";
     return false;
   } else {
-    DateIn.style.border = "1px solid green";
-    DateInError.innerHTML = "";
+    dateIn.style.border = "1px solid green";
+    dateInError.innerHTML = "";
   }
-  //Package
-  if (Package.value == "") {
-    Package.style.border = "1px solid red";
-    PackageError.innerHTML = "Please fill field";
+  //package
+  if (package.value == "") {
+    package.style.border = "1px solid red";
+    packageError.innerHTML = "Please fill field";
     return false;
   } else {
-    Package.style.border = "1px solid green";
-    PackageError.innerHTML = "";
+    package.style.border = "1px solid green";
+    packageError.innerHTML = "";
   }
-  //Make
-  if (Make.value == "") {
-    Make.style.border = "1px solid red";
-    MakeError.innerHTML = "Please fill field";
+  //make
+  if (make.value == "") {
+    make.style.border = "1px solid red";
+    makeError.innerHTML = "Please fill field";
     return false;
   } else {
-    Make.style.border = "1px solid green";
-    MakeError.innerHTML = "";
+    make.style.border = "1px solid green";
+    makeError.innerHTML = "";
   }
-  //Washer
-  if (Washer.value == "") {
-    Washer.style.border = "1px solid red";
-    WasherError.innerHTML = "Please fill field";
+  //washer
+  if (washer.value == "") {
+    washer.style.border = "1px solid red";
+    washerError.innerHTML = "Please fill field";
     return false;
   } else {
-    Washer.style.border = "1px solid green";
-    WasherError.innerHTML = "";
+    washer.style.border = "1px solid green";
+    washerError.innerHTML = "";
   }
   return true;
 };

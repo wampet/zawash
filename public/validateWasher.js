@@ -21,10 +21,10 @@ var nationalIdError  = document.getElementById('nationalIdError');
 
 
 // // For the regular expressions to be used 
-var nameReg = /^[[A-Z]([a-z])|[A-Z]([a-z])]$/;
-var zawashIdReg  = /^Zwash([0-9]{3})$/;
+var nameReg =       /^[A-Z]([a-z'-.]+ [A-Z][a-z'-.]+)$/;
+var zawashIdReg  =  /^Zwash([0-9]{3})$/;
 var nationalIdReg  = /^[A-Z]{3}[0-9A-Z]{8}$/; 
-
+var telReg = /^(07|03|04)[0-9]*$/;
 
 
 
@@ -40,7 +40,7 @@ let validatewasher =() => {
         fullNameError.innerHTML = '';
         fullName.style.border = "1px solid green"
     } else if (!(fullName.value.length<= 8 && fullName.value.match(nameReg))) {
-        fullNameError.innerHTML = 'Name start with Capital letter ';
+        fullNameError.innerHTML = 'Both names start with Capital letters ';
         fullName.style.border = "1px solid red"
         return false;
     }                                
@@ -92,19 +92,21 @@ let validatewasher =() => {
         
             } 
 
-    //telephone
-    if(tel.value==""  ){
+    //telephone number validation
+    if (!(tel.value.length ==10 )) {
+        telError.innerHTML = ' Contact Should have 10 Characters ';
         tel.style.border = "1px solid red"
-        telError.innerHTML ="Please fill field"
     return false;
+    } else if ((tel.value.length== 10) && (tel.value.match(telReg))) {
+       telError.innerHTML = '';
+       tel.style.border = "1px solid green"
+    } else if (!(tel.value.match(telReg))) {
+        telError.innerHTML = 'Valid Contact has format 07xxxxxxxx';
+        tel.style.border = "1px solid red"
+        return false;
     } 
-    else {
-        tel.style.border = "1px solid green"
-        telError.innerHTML =""    
-            }   
-   
 
-    //National ID
+    //National ID validation
     if (!(nationalId.value.length==11)) {
         nationalIdError.innerHTML = ' National ID have 11 Characters';
         nationalId.style.border = "1px solid red"

@@ -1,10 +1,11 @@
+//Here, we’re importing Express into our routes file and then grabbing the router from it.
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const WasherRegister = require('../models/WasherRegister');
 
 
-
+//We then use the router to respond to any requests to the endpoint
 router.get('/', (req, res) => {
   res.render('registerWasher', { title: "Register Car Washer" , alert: req.query.alert })
 })
