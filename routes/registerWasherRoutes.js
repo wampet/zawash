@@ -6,6 +6,7 @@ const WasherRegister = require('../models/WasherRegister');
 
 
 //We then use the router to respond to any requests to the endpoint
+//router.get tells the server what to do when a get request at a given route/path is called.
 router.get('/', (req, res) => {
   res.render('registerWasher', { title: "Register Car Washer" , alert: req.query.alert })
 })

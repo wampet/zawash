@@ -64,14 +64,14 @@ router.get('/expenses-report', async (req, res) => {
     }
 })
 
-
+//We then use the router to respond to any requests to the endpoint
+//router.get tells the server what to do when a get request at a given route/path is called.
 router.get('/collection', async (req, res) => {
     try {
+        //here we  use moment to get the date. We also change its format
         let selectedDate = moment().format('YYYY-MM-DD')
         if (req.query.searchdate)
             selectedDate = moment(req.query.searchdate).format('YYYY-MM-DD')
-
-        // query for returning all expenses on a day
 
         let collectionDetails = await VehicleRegister.find({ dateIn: selectedDate })
 

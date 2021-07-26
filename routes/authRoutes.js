@@ -2,6 +2,9 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
+
+//We then use the router to respond to any requests to the endpoint
+//router.get tells the server what to do when a get request at a given route/path is called.
 router.get('/login', (req, res) => {
     res.render('login', { title: "Log In", alert: req.query.alert })
 })

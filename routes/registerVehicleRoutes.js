@@ -16,6 +16,7 @@ washPackages = {
 }
 
 //We then use the router to respond to any requests to the endpoint
+//router.get tells the server what to do when a get request at a given route/path is called.
 router.get('/', async(req, res) => {
   let washerlist = await WasherRegister.find();
   res.render('registerVehicle', { washers:washerlist , title: "Register Vehicle", alert: req.query.alert })

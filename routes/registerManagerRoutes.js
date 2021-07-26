@@ -6,6 +6,7 @@ const Manager = require('../models/Manager');
 
 
 //We then use the router to respond to any requests to the endpoint
+//router.get tells the server what to do when a get request at a given route/path is called.
 router.get('/', (req, res) => {
     res.render('register_manager', {
         title: "Register Manager",
