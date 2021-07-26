@@ -6,7 +6,7 @@ const VehicleRegister = require('../models/VehicleRegister');
 const WasherRegister = require('../models/WasherRegister');
 
 
-
+//This is a washPackages object that has other objects inside it whose properties are fee and package price
 washPackages = {
   smallcars: { washerFee: 3000, packagePrice: 10000 },
   medium: { washerFee: 4000, packagePrice: 15000 },
@@ -27,6 +27,7 @@ router.get('/', async(req, res) => {
 router.post("/", async(req, res) => {
   try {
       //here we just create an equivalent of time and date by combining them into one thing
+      //The parse() returns the number of milliseconds between January 1, 1970 and the parameter of the parse
       let data = req.body
       let datetimeArrival = Date.parse(data.dateIn + 'T' + data.timeIn);
       data.datetimeArrival = datetimeArrival
