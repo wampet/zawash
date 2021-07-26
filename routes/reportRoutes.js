@@ -70,7 +70,7 @@ router.get('/collection', async (req, res) => {
     try {
         //here we  use moment to get the date. We also change its format
         let selectedDate = moment().format('YYYY-MM-DD')
-        if (req.query.searchdate)
+        if (req.query.searchdate) {
             selectedDate = moment(req.query.searchdate).format('YYYY-MM-DD')
 
         let collectionDetails = await VehicleRegister.find({ dateIn: selectedDate })
@@ -84,13 +84,55 @@ router.get('/collection', async (req, res) => {
         res.render("collection_report", {
             collections: collectionDetails, total: totalCollection[0],
             title: "Collections", defaultDate: selectedDate
-        })
-
+        });
+    }else if (req.query.start_date && req.query.end_date) {
+        let start_date = moment(req.query.start_date).format("YYYY-MM-DD");
+        let end_date = moment(req.query.end_date).format("YYYY-MM-DD");
+  
+        // query za data --- where start_date >= date <= end_date
+  
+        let collectionDetails = await VehicleRegister.find({
+          date: { $lte: end_date, $gte: start_date },
+        });
+        let totalCollection = await VehicleRegister.aggregate([
+          {
+            $match: {
+              date: { $lte: new Date(end_date), $gte: new Date(start_date) },
+            },
+          },
+          {
+            $group: { _id: "$dateIn", totalCollection: { $sum: "$packagePrice" } },
+          },
+        ]);
+        // console.log(totalCollection)
+        let total_amount = 0;
+        for (let x = 0; x < totalCollection.length; x++) {
+          total_amount += totalCollection[x].totalCollection;
+        }
+        // console.log(total_amount)
+  
+        res.render("collection_report", {
+          collections: collectionDetails,
+          title: "Collections",
+          total: { _id: "", totalCollection: total_amount },
+        });
+      } else {
+        res.render("collection_report", {
+          alert: req.query.alert,
+          collections: {
+            datetimeArrival: "",
+            packagePrice: "",
+            numberplate: "",
+            make: "",
+          },
+        });
+      }
+    
     } catch (err) {
         console.log(err)
         res.send('Failed to retrive collections details');
     }
-})
+});
 
 
 router.get('/washer-details', async (req, res) => {

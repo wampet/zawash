@@ -16,6 +16,9 @@ strong {
     margin-left: 50%;
 }
 
+.col-md-11{
+    margin-top: 4px;
+}
 
 /* Assign grid instructions to our parent grid container */
 

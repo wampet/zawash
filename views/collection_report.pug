@@ -1,12 +1,18 @@
 extends dashboardlayout
 block content
         .main
-            strong Collection Report
-            form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/report/collection')
+            strong Collection report
+            p Select date of collection or start and end week then submit for report
+            form.col-lg-8.col-md-20.col-sm-20.form.mx-auto(action='/report/collection')
                 div.form-row
-                    div.col-md-8
-                        input.form-control(type="date" name="searchdate" value=defaultDate)
-                    div.col-md-4
+                    div.col-md-5
+                        input.form-control(type="text" placeholder="Enter Date of Collection" name="searchdate"  value=defaultDate onfocus="(this.type='date')")
+                    div.col-md-3
+                        input.form-control(type="text" name="start_date" placeholder="Weekly Start Date" onfocus="(this.type='date')")
+                    div.col-md-3
+                        input.form-control( type="text" name="end_date" placeholder=" Weekly End date" onfocus="(this.type='date')")
+                div.row
+                    div.col-md-11
                         input.btn.btn-warning.btn-block(type="submit")
             br
             table.table.table-bordered 
