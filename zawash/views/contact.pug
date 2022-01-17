@@ -1,0 +1,22 @@
+extends layoutGen  
+block content
+  .whitebackground
+          .ContactHome
+              #top_zabu  Cutomer Support
+              #topmessi
+                  | We are here for you.
+          img.contact(alt='Image loading' src='images/contact.png')
+          .contact-form
+            .row
+                form#contactform.col-lg-6.col-md-7.col-sm-12.form.mx-auto(method="POST" action='/contact' )
+                    h3#messi Contact Us
+                    div.form-row
+                        div.col.form-group
+                            input.form-control(placeholder='Name' type='text' name='username' required='')
+                        div.col.form-group
+                            input.form-control(placeholder='Enter Contact' type='text' name='contact' required='')
+                        div.col.form-group
+                            input.form-control(placeholder='Enter Message' type='textarea' name='message' required='')
+                    div.form-row
+                        div.col.form-group
+                            button#submit.btn.btn-warning.btn-block Submit
