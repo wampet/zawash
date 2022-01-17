@@ -1,0 +1,42 @@
+extends layoutGen  
+block content
+    #main.container
+        .row
+            form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(name='form' action='/vehicleregistration' method='POST' onsubmit="return validatevehicle();")
+                h3#mega Register Vehicle
+                h5#mini Fill the form below to register new vehicle 
+                .form-row
+                    .col-md-6.col-sm-12
+                        input#numberplate.form-control(name='numberplate' type='text' placeholder='Number Plate')
+                        small#errorplate.error
+                    .col-md-6.col-sm-12
+                        input#colorvehicle.form-control(name='colorvehicle' type='text' placeholder='Color of Vehicle')
+                        small#errorvehicle.error
+                .form-row
+                    .col-md-6.col-sm-12
+                        input#timeIn.form-control(name='timeIn' type='text' placeholder='Check-in Time' onfocus="(this.type='time')")
+                        small#errortime.error
+                    .col-md-6.col-sm-12
+                        input#dateIn.form-control(name='dateIn' type='text' placeholder='Date' onfocus="(this.type='date')")
+                        small#errordate.error
+                .form-row
+                    .col-md-6.col-sm-12
+                        select#package.custom-select(name='package')
+                            option(value='') Choose Package
+                            option(value="smallcars")  Small cars(10,000/=)
+                            option(value="medium") Medium(15,000/=)
+                            option(value="fullwash") Full wash(20,000/=)
+                            option(value="bodaboda") Boda-boda(5,000/=)
+                            option(value="engine") Engine(10,000/=)
+                        small#errorpackage.error
+                    .col-md-6.col-sm-12
+                        select#washer.custom-select(name='washer')
+                            each washer in washers
+                                option(value=washer._id) #{washer.fullname}
+                        small#errorwasher.error
+                .form-field
+                        input#make.form-control(name='make' type='text' placeholder='Make of Vehicle')
+                        small#errormake.error
+                .form-field
+                button#submit.btn.btn-warning.btn-block(type='submit') Submit
+    script(src='/validateVehicle.js')

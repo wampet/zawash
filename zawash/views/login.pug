@@ -1,0 +1,25 @@
+extends layoutGen
+block content
+    .bg-img
+        .zawashHome
+            #top_zabu  Zawash
+            #topWordz
+                | Zaabu Washing Bay is found along Mawanda Road, Kampala.
+                br
+                | We employ youth in the areas of Kalerwe, Katanga among others
+        .contact-form
+            .row
+                form#formlog.col-lg-6.col-md-7.col-sm-12.form.mx-auto(method="POST" action='/login')
+                    h3.megalog Login
+                    div.form-row
+                        div.col.form-group
+                            input.form-control(placeholder='Enter Username' type='text' name='username' required='')
+                    div.form-row
+                        div.col.form-group
+                            input.form-control(placeholder='Enter Password' type='password' name='password' required='')
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-warning.btn-block Login
+                            p.remember
+                                input(type='checkbox')
+                                | Remember Me

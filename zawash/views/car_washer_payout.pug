@@ -1,0 +1,29 @@
+extends dashboardlayout
+block content
+    .main
+        strong Washer payout
+        br
+        form.col-lg-6.col-md-7.col-sm-12.form.mx-auto(action='/report/payout')
+            div.form-row
+                div.col-md-8
+                    input.form-control(type="date" name="searchdate" value=defaultDate)
+                div.col-md-4
+                    input.btn.btn-warning.btn-block(type="submit")
+        br
+        table.table.table-bordered 
+            thead
+                tr
+                    th Full Name 
+                    th Number of cars
+                    th Payout Amount
+            tbody
+            if washers.length
+                each washer in washers
+                    tr
+                        td #{washer.details[0].fullname}
+                        td #{washer.count}
+                        td #{washer.totalPayout}
+                tr
+                    th(colspan=2) Total Payout 
+                    td #{new Intl.NumberFormat().format(sumPayout.totalPayoutPerDay)}
+                        

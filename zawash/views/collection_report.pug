@@ -1,0 +1,40 @@
+extends dashboardlayout
+block content
+        .main
+            strong Collection report
+            p Select date of collection or start and end week then submit for report
+            form.col-lg-8.col-md-20.col-sm-20.form.mx-auto(action='/report/collection')
+                div.form-row
+                    div.col-md-5
+                        input.form-control(type="text" placeholder="Enter Date of Collection" name="searchdate"  value=defaultDate onfocus="(this.type='date')")
+                    div.col-md-3
+                        input.form-control(type="text" name="start_date" placeholder="Weekly Start Date" onfocus="(this.type='date')")
+                    div.col-md-3
+                        input.form-control( type="text" name="end_date" placeholder=" Weekly End date" onfocus="(this.type='date')")
+                div.row
+                    div.col-md-11
+                        input.btn.btn-warning.btn-block(type="submit")
+            br
+            table.table.table-bordered 
+                thead
+                    tr
+                        th Date and Time of Arrival
+                        th Color
+                        th Make
+                        th Number Plate
+                        th Package
+                        th Amount(Ugx)
+                tbody
+                if collections.length
+                    each collection in collections
+                        tr
+                            td #{moment(collection.datetimeArrival).format('DD-MM-YYYY hh:mm')}
+                            td #{collection.colorvehicle}
+                            td #{collection.make}
+                            td #{collection.numberplate}
+                            td #{collection.package}
+                            td #{collection.packagePrice}
+                            
+                    tr
+                        th(colspan=5) Total Collections
+                        td #{new Intl.NumberFormat().format(total.totalCollection)}
